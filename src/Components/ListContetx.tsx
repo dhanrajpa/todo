@@ -54,11 +54,13 @@ export const ListProvider = ({ children }: listContextProvideType) => {
         // console.log({ newObj: listArray });
     }
     const delNote = (id: number, arr: objType) => {
+        // setfirst(false)
         const temp = arr;
 
         const index = temp.findIndex(x => x.id === id);
         temp.splice(index, 1);
         setlistArray(temp)
+        setfirst(!first)
 
     }
 

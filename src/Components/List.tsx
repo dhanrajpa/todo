@@ -27,11 +27,7 @@ const ListA = () => {
     const { listArray, setlistArray, delNote, setfirst } = useListContext
     const [dense, setDense] = React.useState(false);
 
-    const handleDel = (id: number, callback: any, listArray: objType) => {
-        // console.log("handle del called");
-        callback(id, listArray);
-        console.log(listArray);
-    }
+
     React.useEffect(() => {
         console.log("list render");
 
@@ -50,7 +46,7 @@ const ListA = () => {
                                                 onClick={() => {
                                                     // handleDel(key.id, delNote, listArray)
                                                     delNote(key.id, listArray)
-                                                    setfirst(true)
+                                                    // setfirst(true)
                                                     // setfirst(false)
 
                                                 }}>
@@ -58,7 +54,6 @@ const ListA = () => {
                                             </IconButton>
                                         }
                                         key={key.id}
-
                                     >
                                         <ListItemAvatar>
                                             <Avatar>
@@ -67,7 +62,6 @@ const ListA = () => {
                                         </ListItemAvatar>
                                         <ListItemText
                                             primary={key.note}
-                                        // secondary={true ? 'Secondary text' : null}
                                         />
                                     </ListItem>
                                 )
