@@ -22,22 +22,20 @@ const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
 }));
 
-const ListA = () => {
+export const ListA = () => {
     const useListContext: contexType = useContext(ListContext);
-    const { listArray, setlistArray, delNote, setfirst } = useListContext
+    const { listArray, delNote } = useListContext
     const [dense, setDense] = React.useState(false);
-
 
     React.useEffect(() => {
         console.log("list render");
-
     }, [])
     return (
         <>
             <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
                 <Grid item xs={12} md={6}>
-                    <Demo>
-                        <List dense={dense}>
+                    <Demo >
+                        <List test-id="notes_list" dense={dense}>
                             {!!listArray && listArray.map((key, value) => {
                                 return (
                                     <ListItem
@@ -76,4 +74,3 @@ const ListA = () => {
     )
 }
 
-export default ListA

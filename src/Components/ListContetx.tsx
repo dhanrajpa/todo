@@ -55,18 +55,16 @@ export const ListProvider = ({ children }: listContextProvideType) => {
     }
     const delNote = (id: number, arr: objType) => {
         // setfirst(false)
-        const temp = arr;
+        const temp = [...arr];
 
         const index = temp.findIndex(x => x.id === id);
         temp.splice(index, 1);
+
         setlistArray(temp)
-        setfirst(!first)
+        // setfirst(!first)
 
     }
-
-    // console.log(listArray);
-
-    // !!note && console.log(note);
+    !!note && console.log(note);
 
     return (
         <ListContext.Provider value={{ setfirst, note, delNote, setlistArray, listArray, setNote, addNote }}>
