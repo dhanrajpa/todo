@@ -6,9 +6,9 @@ test('Input behaviour', async () => {
     const user = userEvent.setup();
 
     render(<ListA />);
-    console.log(<ListA />);
-    const list = screen.getAllByTestId("notes_list")
-    // expect(list.props().propYouWantToCheck).toBeFalsy();
+    // console.log(<ListA />);
+    // const list = screen.getAllByTestId("notes_list");
+
 
 
 

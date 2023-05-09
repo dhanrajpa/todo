@@ -37,6 +37,7 @@ export const ListProvider = ({ children }: listContextProvideType) => {
     React.useEffect(() => {
         console.log("context render");
     }, [])
+    console.log("check boolean ", !"");
 
     const addNote = (note: string, noteObj: objType) => {
         const elem = listArray.length

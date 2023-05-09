@@ -1,5 +1,5 @@
 import React from 'react'
-import List from './List'
+import { ListA } from './List'
 import { Input } from './Input'
 import { ListProvider } from './ListContetx'
 
@@ -12,7 +12,7 @@ const Main = () => {
             <div>
                 <ListProvider>
                     <Input />
-                    <List />
+                    <ListA />
                 </ListProvider>
             </div>
         </>
