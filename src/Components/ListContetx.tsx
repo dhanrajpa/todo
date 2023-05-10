@@ -19,6 +19,8 @@ export type contexType = {
     delNote: any
     listArray: objType
     setfirst: React.Dispatch<React.SetStateAction<boolean>>
+    value: boolean
+    btnClick: (value: boolean) => void
 }
 
 type listContextProvideType = {
@@ -29,6 +31,7 @@ export const ListContext = createContext({} as contexType);
 
 export const ListProvider = ({ children }: listContextProvideType) => {
     const [note, setNote] = useState<string>("");
+    const [value, setvalue] = React.useState(false)
     const [listArray, setlistArray] = React.useState<objType>([
         { id: 1, note: 'typescript' }
     ]);
@@ -38,6 +41,10 @@ export const ListProvider = ({ children }: listContextProvideType) => {
         console.log("context render");
     }, [])
     console.log("check boolean ", !"");
+
+    const btnClick = (value: boolean): void => {
+        setvalue(!value);
+    }
 
     const addNote = (note: string, noteObj: objType) => {
         const elem = listArray.length
@@ -68,7 +75,7 @@ export const ListProvider = ({ children }: listContextProvideType) => {
     !!note && console.log(note);
 
     return (
-        <ListContext.Provider value={{ setfirst, note, delNote, setlistArray, listArray, setNote, addNote }}>
+        <ListContext.Provider value={{ setfirst, value, btnClick, note, delNote, setlistArray, listArray, setNote, addNote }}>
             {children}
         </ListContext.Provider>
     );

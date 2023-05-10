@@ -2,6 +2,7 @@ import React from 'react'
 import { ListA } from './List'
 import { Input } from './Input'
 import { ListProvider } from './ListContetx'
+import { Test } from './MaterialUi/Test/Test'
 
 const Main = () => {
     // console.log(<Input />);
@@ -11,8 +12,9 @@ const Main = () => {
         <>
             <div>
                 <ListProvider>
-                    <Input />
-                    <ListA />
+                    {/* <Input />
+                    <ListA /> */}
+                    <Test />
                 </ListProvider>
             </div>
         </>
